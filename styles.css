@@ -1,69 +1,73 @@
 body {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    font-family: 'Fira Code', monospace;
     margin: 0;
+    padding: 0;
+    background: #000; /* Pure black for AMOLED theme */
+    color: #fff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure particles stay in the background */
+}
+
+.content {
+    position: relative;
+    z-index: 2; /* Ensure content is above particles */
     padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-h1, h2 {
-    color: #e0e0e0;
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
-h1 span {
-    color: inherit; /* Ensure h1 doesn't override span colors */
-}
-
-table {
+#leaderboard {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #2a2a2a;
+    background: rgba(30, 30, 30, 0.9); /* Semi-transparent dark background for readability */
+    color: #fff;
 }
 
-th, td {
+#leaderboard th, #leaderboard td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid #444;
 }
 
-th {
-    background-color: #333;
+#leaderboard th {
+    background: #222;
+    font-weight: bold;
 }
 
-table tr:hover {
-    background-color: #3a3a3a !important;
+#leaderboard td {
+    font-size: 1em;
 }
 
-.contest-list {
-    list-style-type: none;
-    padding: 0;
-}
+/* Elo color classes based on your script.js */
+.elo-2400-plus { color: #ff5555; } /* Grandmaster - Red */
+.elo-2200-2400 { color: #ffaa00; } /* Master - Orange */
+.elo-1900-2200 { color: #ff00ff; } /* Candidate Master - Magenta */
+.elo-1600-1900 { color: #55aaff; } /* Expert - Blue */
+.elo-1400-1600 { color: #00cccc; } /* Specialist - Teal */
+.elo-1200-1400 { color: #00ff00; } /* Pupil - Green */
+.elo-0-1200 { color: #aaaaaa; } /* Newbie - Gray */
 
-.contest-list li {
-    background-color: #2a2a2a;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-}
-
-/* Elo color classes */
-.elo-2400-plus { color: #ff5555; } /* Red */
-.elo-2200-2400 { color: #ffaa00; } /* Orange */
-.elo-1900-2200 { color: #aa00aa; } /* Purple */
-.elo-1600-1900 { color: #55aaff; } /* Blue */
-.elo-1400-1600 { color: #00aaaa; } /* Cyan */
-.elo-1200-1400 { color: #00aa00; } /* Green */
-.elo-0-1200 { color: #aaaaaa; } /* Gray */
-
-/* Ensure currentRating inherits the Elo color */
-#currentRating.elo-2400-plus { color: #ff5555; }
-#currentRating.elo-2200-2400 { color: #ffaa00; }
-#currentRating.elo-1900-2200 { color: #aa00aa; }
-#currentRating.elo-1600-1900 { color: #55aaff; }
-#currentRating.elo-1400-1600 { color: #00aaaa; }
-#currentRating.elo-1200-1400 { color: #00aa00; }
-#currentRating.elo-0-1200 { color: #aaaaaa; }
-
-/* Top 100 users in leaderboard */
 .elo-top-100 { font-weight: bold; }
+
+#leaderboard a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#leaderboard a:hover {
+    text-decoration: underline;
+}
