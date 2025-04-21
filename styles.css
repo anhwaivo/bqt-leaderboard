@@ -1,69 +1,75 @@
-body {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    font-family: 'Fira Code', monospace;
-    margin: 0;
-    padding: 20px;
+{
+    "particles": {
+        "number": {
+            "value": 60,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": ["#ff6666", "#ffbb33", "#66b3ff", "#33cccc"] /* Vibrant Elo-inspired colors */
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            }
+        },
+        "opacity": {
+            "value": 0.6,
+            "random": true,
+            "anim": {
+                "enable": false
+            }
+        },
+        "size": {
+            "value": 2.5,
+            "random": true,
+            "anim": {
+                "enable": false
+            }
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 120,
+            "color": "#ffffff",
+            "opacity": 0.3,
+            "width": 0.8
+        },
+        "move": {
+            "enable": true,
+            "speed": 1.5,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "push"
+            },
+            "resize": true
+        },
+        "modes": {
+            "repulse": {
+                "distance": 80,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 3
+            }
+        }
+    },
+    "retina_detect": true
 }
-
-h1, h2 {
-    color: #e0e0e0;
-}
-
-h1 span {
-    color: inherit; /* Ensure h1 doesn't override span colors */
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #2a2a2a;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #444;
-}
-
-th {
-    background-color: #333;
-}
-
-table tr:hover {
-    background-color: #3a3a3a !important;
-}
-
-.contest-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.contest-list li {
-    background-color: #2a2a2a;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-}
-
-/* Elo color classes */
-.elo-2400-plus { color: #ff5555; } /* Red */
-.elo-2200-2400 { color: #ffaa00; } /* Orange */
-.elo-1900-2200 { color: #aa00aa; } /* Purple */
-.elo-1600-1900 { color: #55aaff; } /* Blue */
-.elo-1400-1600 { color: #00aaaa; } /* Cyan */
-.elo-1200-1400 { color: #00aa00; } /* Green */
-.elo-0-1200 { color: #aaaaaa; } /* Gray */
-
-/* Ensure currentRating inherits the Elo color */
-#currentRating.elo-2400-plus { color: #ff5555; }
-#currentRating.elo-2200-2400 { color: #ffaa00; }
-#currentRating.elo-1900-2200 { color: #aa00aa; }
-#currentRating.elo-1600-1900 { color: #55aaff; }
-#currentRating.elo-1400-1600 { color: #00aaaa; }
-#currentRating.elo-1200-1400 { color: #00aa00; }
-#currentRating.elo-0-1200 { color: #aaaaaa; }
-
-/* Top 100 users in leaderboard */
-.elo-top-100 { font-weight: bold; }
